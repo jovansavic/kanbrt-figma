@@ -66,7 +66,9 @@ const EditTask: React.FC<EditTaskProps> = ({ taskDetails, onUpdate }) => {
       </div>
 
 
-      <button type="button">cancel</button>
+      <button type="button" onClick={()=>{
+        parent.postMessage({ pluginMessage: { type: 'deleteTask', data: {id, title, person, status, oldStatus, description} } }, '*');
+      }}>Delete</button>
       <button type="submit">Update Task</button>
     </form>
   );

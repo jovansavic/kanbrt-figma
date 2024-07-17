@@ -61,15 +61,39 @@ function Widget() {
     setStatuses(updatedStatuses);
 }
 
+function deleteTask(taskToDelete: any) {
+  // Filter out the task to delete from the tasks list
+  const updatedTasks = myTasks.filter(task => task.id !== taskToDelete.id);
+  
+  // Update statuses to remove the task ID from the corresponding status
+  const updatedStatuses = myStatuses.map(status => {
+    if (status.tasks.indexOf(taskToDelete.id) !== -1) {
+      return { ...status, tasks: status.tasks.filter(id => id !== taskToDelete.id) };
+    }
+    return status;
+  });
+
+  // Update the states with the new lists
+  setTasks(updatedTasks);
+  setStatuses(updatedStatuses);
+}
+
+
   useEffect(() => {
     figma.ui.on("message", (msg) => {
       if (msg.type == "updateTask") {
         updateTaskAndStatuses(msg.data);
-        figma.notify("Task successfuly updated! 🎉");
+        figma.notify("Task successfuly updated! 👍🏻");
       }
       if (msg.type == "createTask") {
         addNewTask(msg.data);
         figma.notify("Task successfuly created! 🎉");
+        figma.closePlugin();
+      }
+      if (msg.type == "deleteTask") {
+        deleteTask(msg.data);
+        figma.notify("Task deleted! 😢");
+        figma.closePlugin();
       }
       if (msg === "hello") {
         figma.notify("Don't mess up something 👑");
