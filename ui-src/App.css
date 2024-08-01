@@ -1,6 +1,8 @@
 .App {
-  padding: 20px;
+  padding: 24px;
+  box-sizing: border-box;
   background-color: #141825;
+  height: 100%;
 }
 h1, h2, h3, h4, h5, h6, p, label {
   color: white;
@@ -16,15 +18,21 @@ button {
   border-radius: 8px;
   font-size: 18px;
   border: none;
+  color: white;
 }
 button.primary {
   background-color: #107CFB;
-  color: white;
 }
 
 button.secondary {
   background-color: #202430;
-  color: white;
+}
+button.danger {
+  background-color: #FF5146;
+}
+button.danger.small {
+  margin-top: 24px;
+  max-width: 128px;
 }
 .inputField {
   padding-top: 8px;
@@ -32,10 +40,42 @@ button.secondary {
   display: flex;
   flex-direction: column;
 }
-input, textarea {
+input, textarea, select {
   background-color: #222531;
   padding: 12px 14px;
   border-radius: 4px;
   color: #ffffff;
   border: none;
+}
+
+.mainWrap {
+  display: flex;
+  flex-direction: row;
+}
+.col-wrap {
+  flex-direction: column;
+  display: flex;
+  flex-grow: 1;
+  padding: 16px;
+}
+.taskDescription {
+  height: 256px;
+}
+.statusPerson {
+  max-width: 192px;
+}
+
+.formFooter {
+  position: fixed;
+  background-color: #141825;
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+  bottom: 0;
+  right: 0;
+  width: 720px;
+  border-top: 1px solid #222531;
+}
+.formFooter .primary {
+  margin-left: 24px;
 }

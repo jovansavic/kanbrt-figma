@@ -17,7 +17,7 @@ function TaskCard(task:any) {
         verticalAlignItems="center"
         onClick={async () => {
                   await new Promise((resolve) => {
-                    figma.showUI(__html__);
+                    figma.showUI(__html__, { width: 720, height: 720, title: "Task Details" });
                     figma.ui.postMessage?.({ pluginMessage: task });
                   });
                 }}

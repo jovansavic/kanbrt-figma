@@ -83,7 +83,7 @@ function Header() {
           verticalAlignItems="center"
           onClick={async () => {
             await new Promise((resolve) => {
-              figma.showUI(__html__);
+              figma.showUI(__html__, { width: 720, height: 700, title: "Add New Task" });
             });
           }}
         >

@@ -20,56 +20,69 @@ const EditTask: React.FC<EditTaskProps> = ({ taskDetails, onUpdate }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Edit Task</h1>
+    <form className='taskForm' onSubmit={handleSubmit}>
+      <div className="mainWrap">
+      <div className="col-wrap">
+        <div className="inputField">
+          <label>Task Title</label>
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+            name="title"
+          />
+        </div>
+        <div className="inputField">
+          <label>Description</label>
+          <textarea 
+            name="description" 
+            className='taskDescription'
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          ></textarea>
+        </div>
 
-      <div className="inputField">
-        <label>Task Title</label>
-        <input
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
-          name="title"
-        />
-      </div>
+        <button type="button" className="danger small" onClick={()=>{
+          parent.postMessage({ pluginMessage: { type: 'deleteTask', data: {id, title, person, status, oldStatus, description} } }, '*');
+        }}>Delete</button>
 
-      <div className="inputField">
-        <label>Person</label>
-        <input
-          type="text"
-          value={person}
-          onChange={(e) => setPerson(e.target.value)}
-          required
-          name="person"
-        />
-      </div>
-
-      <div className="inputField">
-        <label>Status</label>
-        <input
-          type="text"
-          value={status}
-          onChange={(e) => setStatus(e.target.value)}
-          required
-          name="status"
-        />
-      </div>
-
-      <div className="inputField">
-        <label>Description</label>
-        <textarea 
-          name="description" 
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        ></textarea>
       </div>
 
 
-      <button type="button" onClick={()=>{
-        parent.postMessage({ pluginMessage: { type: 'deleteTask', data: {id, title, person, status, oldStatus, description} } }, '*');
-      }}>Delete</button>
-      <button type="submit">Update Task</button>
+      <div className="col-wrap statusPerson">
+        <div className="inputField">
+          <label>Status</label>
+          <select name="status" value={status} onChange={(e) => setStatus(e.target.value)}>
+            <option value="1">Open</option>
+            <option value="2">In Progress</option>
+            <option value="3">In Review</option>
+            <option value="4">Done</option>
+          </select>
+          {/* <input
+            type="text"
+            value={status}
+            onChange={(e) => setStatus(e.target.value)}
+            required
+            name="status"
+          /> */}
+        </div>
+        <div className="inputField">
+          <label>Person</label>
+          <input
+            type="text"
+            value={person}
+            onChange={(e) => setPerson(e.target.value)}
+            required
+            name="person"
+          />
+        </div>
+      </div>
+      </div>
+
+      <div className='formFooter'>
+        <button type="submit" className="primary">Update Task</button>
+      </div>
     </form>
   );
 };
