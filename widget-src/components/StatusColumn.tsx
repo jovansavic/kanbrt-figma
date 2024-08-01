@@ -55,30 +55,6 @@ function StatusColumn({status, tasks}: any) {
           width={292}
           verticalAlignItems="center"
         >
-          <AutoLayout
-            name="CounterCircle"
-            fill="#FFF"
-            cornerRadius={24}
-            overflow="visible"
-            spacing={10}
-            width={16}
-            height={16}
-            horizontalAlignItems="center"
-            verticalAlignItems="center"
-          >
-            <Text
-              name="Counter"
-              fill="#3C3E46"
-              width="fill-parent"
-              horizontalAlignText="center"
-              lineHeight="100%"
-              fontFamily="Inter"
-              fontSize={10}
-              fontWeight={700}
-            >
-              1
-            </Text>
-          </AutoLayout>
           <Text
             name={status.name}
             fill="#FFF"
@@ -89,7 +65,7 @@ function StatusColumn({status, tasks}: any) {
           >
             {status.name}
           </Text>
-          <AutoLayout
+          {/* <AutoLayout
             name="Button"
             fill="#FFFFFF0D"
             cornerRadius={4}
@@ -136,7 +112,7 @@ function StatusColumn({status, tasks}: any) {
             >
               Task
             </Text>
-          </AutoLayout>
+          </AutoLayout> */}
         </AutoLayout>
         <AutoLayout
           name="Task Wrap"

@@ -35,7 +35,7 @@ function TaskCard(task:any) {
         <AutoLayout
           name="Status"
           overflow="visible"
-          spacing="auto"
+          // spacing="auto"
           width="fill-parent"
           verticalAlignItems="center"
         >
@@ -87,7 +87,7 @@ function TaskCard(task:any) {
               {task.task.person}
             </Text>
           </AutoLayout>
-          <AutoLayout
+          {/* <AutoLayout
             name="Button"
             fill="#FFFFFF0D"
             cornerRadius={4}
@@ -109,7 +109,7 @@ function TaskCard(task:any) {
             >
               Open
             </Text>
-          </AutoLayout>
+          </AutoLayout> */}
         </AutoLayout>
       </AutoLayout>
     );
