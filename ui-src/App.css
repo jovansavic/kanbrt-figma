@@ -1,3 +1,41 @@
 .App {
   padding: 20px;
+  background-color: #141825;
+}
+h1, h2, h3, h4, h5, h6, p, label {
+  color: white;
+  font-family: 'Inter';
+}
+label {
+  font-size: 12px;
+  font-weight: 500;
+  padding-bottom: 6px;
+}
+button {
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 18px;
+  border: none;
+}
+button.primary {
+  background-color: #107CFB;
+  color: white;
+}
+
+button.secondary {
+  background-color: #202430;
+  color: white;
+}
+.inputField {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+}
+input, textarea {
+  background-color: #222531;
+  padding: 12px 14px;
+  border-radius: 4px;
+  color: #ffffff;
+  border: none;
 }

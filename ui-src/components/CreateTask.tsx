@@ -18,7 +18,7 @@ const CreateTask: React.FC<CreateTaskProps> = ({ onCreate }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Create Task</h1>
+      <h1>Add New Task</h1>
 
       <div className="inputField">
         <label>Task Title</label>
@@ -62,9 +62,10 @@ const CreateTask: React.FC<CreateTaskProps> = ({ onCreate }) => {
         ></textarea>
       </div>
 
-
-      <button type="button">cancel</button>
-      <button type="submit">Create Task</button>
+      <div className='formFooter'>
+        <button type="button" className="secondary">cancel</button>
+        <button type="submit" className="primary">Create Task</button>
+      </div>
     </form>
   );
 };
