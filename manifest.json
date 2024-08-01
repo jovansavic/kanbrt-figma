@@ -1,8 +1,11 @@
 {
   "name": "Kanbrt",
-  "id": "{{widgetId}}",
+  "id": "1400919563494638667",
   "api": "1.0.0",
   "editorType": ["figma", "figjam"],
+  "networkAccess": {
+    "allowedDomains": ["none"]
+  },
   "permissions": [],
   "containsWidget": true,
   "main": "dist/code.js",
