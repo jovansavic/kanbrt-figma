@@ -34,5 +34,5 @@ const STATUSES_FOR_DEV: Status[] = [
   { id: "4", name: "Done", tasks: ["4"] }
 ];
 
-export const statuses: Status[] = STATUSES_FOR_MOCKUP;
+export const statuses: Status[] = STATUSES_FOR_DEV;
   

@@ -39,4 +39,4 @@ export interface Task {
     { "id": "24", "title": "UX Workshop Facilitation", "description": "Facilitate a workshop to ideate on new user experience strategies.", "status": "4", "person": "Penny Hofstadter" }
 ];
 
-export const tasks: Task[] = TASKS_FOR_MOCKUP;
+export const tasks: Task[] = TASKS_FOR_DEV;
